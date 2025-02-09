@@ -27,18 +27,18 @@ const OurClient = () => {
       <img
         src={logo.src}
         alt={logo.alt}
-        className="w-40 h-20 object-contain rounded-md shadow-md"
+        className="w-40 h-20 object-contain rounded-md shadow-md hover:scale-105 transition-transform duration-300"
       />
     </div>
   ));
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-[#F5F5DC] dark:bg-gray-800">
       <div className="container px-6 mx-auto space-y-6 text-center lg:px-8 lg:space-y-8">
-        <h2 className="text-2xl font-bold text-center mb-10">Our Valued Clients</h2>
-        <h4 className="text-xl text-black">
-          Trusted by leading companies in Construction, Furniture Trading & Upholstery.
-        </h4>
+        <h2 className="text-3xl font-bold text-[#6B4226] mb-4">Our Valued Clients</h2>
+        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Trusted by leading companies in the furniture, interior design, and upholstery industries.
+        </p>
 
         <div className="carousel-container mt-6">
           <AliceCarousel

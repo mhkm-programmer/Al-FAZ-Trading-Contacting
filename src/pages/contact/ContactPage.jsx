@@ -1,14 +1,14 @@
-import React from 'react';
-import ParallaxSection from '../reusable/Parallax';
 import Contact from './Contact';
 import PageTitle from '../reusable/PageTitle';
+import ParallaxSection from '../reusable/Parallax';
+import React from 'react';
 
 const ContactPage = () => {
     return (
         <div>
-         <PageTitle title="mhkm-programmer | Hire Me" />
+         <PageTitle title="Al-FWZ Trading & Contracting | Contact Us" />
              <ParallaxSection
-        imagePath="https://i.ibb.co/NxNW6Xx/unemployed-man-desperately-looking-job-holding-need-job-sign-1-min.jpg"
+        imagePath="https://8upload.com/image/67a7ffa390ec8/Contact-min.jpg"
         title=""
         subTitle=""
       />

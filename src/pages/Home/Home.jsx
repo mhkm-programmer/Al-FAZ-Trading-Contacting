@@ -4,6 +4,7 @@ import HeroSlider from "./heroBanner.jsx/HeroSlider";
 import OurClient from "./OurClient";
 import PageTitle from "../reusable/PageTitle";
 import RecentServiceCard from "../service/RecentServiceCard";
+import SubscreibeContact from "../contact/SubscreibeContact";
 import WhyChoose from "./WhyChoose";
 
 const Home = () => {
@@ -11,13 +12,15 @@ const Home = () => {
     <div>
     <PageTitle title="Al-FWZ Trading & Contracting | Home"/>
       <HeroSlider />
-      <WhyChoose/>
+      
       <RecentServiceCard />
       {/* <MyProjects />
       <Blog /> */}
+      <WhyChoose/>
       <OurClient/>
       <CustomerReviews/>
-      {/* <Contact /> */}
+    
+     <SubscreibeContact/>
     </div>
   );
 };

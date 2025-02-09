@@ -2,319 +2,356 @@ import { FaArrowLeft, FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { useRef, useState } from "react";
 
 import { Transition } from "react-transition-group";
+import useThemeSwitcher from "../../hooks/useThemeSwitcher";
+import useTruncatedText from "../reusable/useTruncatedText";
 
 const MyServices = () => { 
 
 const [Services, setServices] = useState([
-    {
-      id: 1,
-      title: "Custom Web Application Development",
-      description:
-        " Custom web application development involves building tailored web applications from scratch to meet specific business requirements.",
-      image:[
-        "https://i.ibb.co/jfLzYTz/Custom-Web-Application-Development-min.jpg",
-        "https://i.ibb.co/jfLzYTz/Custom-Web-Application-Development-min.jpg",
-        "https://i.ibb.co/jfLzYTz/Custom-Web-Application-Development-min.jpg",
-        "https://i.ibb.co/jfLzYTz/Custom-Web-Application-Development-min.jpg",
-        "https://i.ibb.co/jfLzYTz/Custom-Web-Application-Development-min.jpg"
-      ],
-      galleryImage:[
-        "https://i.ibb.co/VVBdZbG/Responsive-Frontend-Development-min.jpg",
-        "https://i.ibb.co/sbpDZ3X/React-js-Developer-min.jpg",
-        "https://i.ibb.co/Hr3S61Y/Design-to-HTML-CSS-Conversion-min.jpg",
-        "https://i.ibb.co/LxX7BZM/Backend-Development-Services-min.jpg",
-        "https://i.ibb.co/WnmFbtk/Server-Side-Rendering-SSR-min.jpg",
-        "https://i.ibb.co/bFw97Jr/Database-Design-and-Optimization-min.jpg"
-      ],
-      keyFeatures: [
-        "Customized functionality",
-        "Scalability",
-        "Seamless user experience",
-      ],
-      technologies: [
-        "HTML5",
-        "CSS",
-        "Bootstrap",
-        "Tailwind CSS",
-        "React.js",
-        "backend frameworks (Express.js)",
-        "Databases (NoSQL)",
-      ],
-      githubLink: "https://github.com/your-username/project-a",
-      liveDemoLink: "https://www.example.com/project-a",
-    },
-    {
-      id: 2,
-      title: "Responsive Frontend Development",
-      description:
-        "Responsive frontend development focuses on creating user interfaces that adapt to different screen sizes and devices for a seamless user experience.",
-      image: "https://i.ibb.co/VVBdZbG/Responsive-Frontend-Development-min.jpg",
-      keyFeatures: [
-        "Mobile-friendly interfaces",
-        "Optimized layouts",
-        "Responsive design",
-      ],
-      technologies: ["HTML5", "CSS", "Bootstrap", "Tailwind CSS", "React.js"],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-
-    {
-      id: 3,
-      title: "React.js Developer",
-      description:
-        "A React.js developer specializes in developing web applications using the React.js library.",
-      image: "https://i.ibb.co/sbpDZ3X/React-js-Developer-min.jpg",
-      keyFeatures: [
-        " Building reusable components",
-        "Managing state",
-        "Implementing React-specific patterns",
-      ],
-      technologies: [
-        "React.js",
-        "JSX",
-        "Redux(state management)",
-        "React Router",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 4,
-      title: "Design to HTML/CSS Conversion",
-      description:
-        "Converting design files (Figma, PSD, AI, etc.) into functional HTML and CSS code to bring the design to life on the web.",
-      image: "https://i.ibb.co/Hr3S61Y/Design-to-HTML-CSS-Conversion-min.jpg",
-      keyFeatures: [
-        "Pixel-Perfect Conversion: Ensuring that the HTML and CSS code accurately reflects the original design, maintaining the visual fidelity and alignment.",
-        "Cross-Browser Compatibility: Developing responsive web pages that render consistently across different browsers and devices.",
-        "Semantic Markup: Utilizing proper HTML tags and structure to enhance accessibility, search engine optimization (SEO), and maintainability.",
-        "Responsive Design: Creating web pages that adapt to various screen sizes and devices, providing a seamless user experience.",
-        "Optimized Performance: Optimizing code and assets for fast loading times, reducing file sizes, and implementing best practices for performance.",
-        "CSS Preprocessors: Utilizing CSS preprocessors like Sass or Less to enhance code maintainability and modularity.",
-        "SEO Best Practices: Incorporating SEO-friendly techniques such as optimized meta tags, semantic markup, and clean code structure.",
-        "Accessibility Compliance: Implementing web accessibility standards (WCAG) to ensure that the website is usable by people with disabilities.",
-      ],
-      technologies: [
-        "HTML5: Markup language used for structuring the content of web pages.",
-        "CSS3: Style sheet language used for designing the layout, appearance, and styling of web pages.",
-        "JavaScript: Used to add interactivity and dynamic functionality to web pages, if required.",
-        "CSS Preprocessors: Sass, Less, or Stylus for writing modular and reusable CSS.",
-        "Responsive Frameworks: Bootstrap, Tailwind CSS to build responsive and mobile-first web pages.",
-        "Image Optimization Tools: Tools like ImageOptim or TinyPNG for optimizing image files to improve page load times.",
-        "Version Control: Git for managing code versions and collaboration with other developers.",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 5,
-      title: "Backend Development Services",
-      description:
-        "A backend developer focuses on server-side development, handling the logic and functionality behind web applications.",
-      image: "https://i.ibb.co/LxX7BZM/Backend-Development-Services-min.jpg",
-      keyFeatures: [
-        " Implementing server-side APIs",
-        "Database integration",
-        "Business logic implementation",
-      ],
-      technologies: [
-        "Node.js",
-        "Express.js",
-        "backend frameworks",
-        "databases",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 6,
-      title: "Full-Stack(MERN) Web Application Developer",
-      description:
-        "A full-stack developer is proficient in both frontend and backend development, capable of handling end-to-end web application development.",
-      image:
-        "https://i.ibb.co/crKpCJF/Full-Stack-MERN-Web-Application-Developer-min.jpg",
-      keyFeatures: [
-        " Building complete web applications",
-        "Integrating frontend and backend components",
-        "Managing data flow",
-      ],
-      technologies: [
-        "HTML5",
-        "CSS",
-        "Bootstrap",
-        "Tailwind CSS",
-        "React.js",
-        "Node.js",
-        "Backend frameworks (Express.js)",
-        "Databases (NoSQL)",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 7,
-      title: "API Development and Integration",
-      description:
-        "API development involves designing and implementing application programming interfaces (APIs) for communication between different software systems.",
-      image: "https://i.ibb.co/qJRrHTk/API-Development-and-Integration-min.jpg",
-      keyFeatures: [
-        " Creation of RESTful or GraphQL APIs",
-        "Data exchange between systems",
-        "Third-party integrations",
-      ],
-      technologies: ["Node.js", "Express.js,"],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 8,
-      title: "Server-Side Rendering (SSR)",
-      description:
-        " Server-Side Rendering renders web pages on the server and sends them to the client, improving performance and SEO",
-      image: "https://i.ibb.co/WnmFbtk/Server-Side-Rendering-SSR-min.jpg",
-      keyFeatures: [
-        " Faster initial page load times",
-        "Better SEO",
-        "Improved performance on low-powered devices",
-      ],
-      technologies: ["Next.js", "Nuxt.js", "Server-side rendering frameworks"],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 9,
-      title: "Single-Page Application (SPA) Development",
-      description:
-        "Single-Page Application development involves creating web applications that dynamically update content without page reloads.",
-      image:
-        "https://i.ibb.co/SJ5V4Qz/Single-Page-Application-SPA-Development-min.jpg",
-      keyFeatures: [
-        "Interactive user interfaces",
-        "Smooth navigation",
-        "Efficient data loading",
-      ],
-      technologies: ["React.js", "Client-side routing"],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 10,
-      title: "User Authentication and Authorization",
-      description:
-        "User authentication and authorization involve implementing secure mechanisms for user identification and access control.",
-      image:
-        "https://i.ibb.co/tQRG88X/User-Authentication-and-Authorization-min.jpg",
-      keyFeatures: [
-        "User registration",
-        "Login/logout functionality",
-        "Role-based access control",
-      ],
-      technologies: [
-        "JSON Web Tokens (JWT)",
-        "Firebase",
-        "OAuth",
-        "Passport.js",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-
-    {
-      id: 11,
-      title: "MongoDB Developer",
-      description:
-        "A MongoDB developer specializes in working with MongoDB, a popular NoSQL database.",
-      image: "https://i.ibb.co/XtJKxps/Mongo-DB-Developer-min.jpg",
-      keyFeatures: [
-        "Designing and modeling MongoDB databases",
-        "Implementing CRUD operations",
-        "Optimizing queries",
-      ],
-      technologies: ["MongoDB", "Mongoose (ODM)", "Indexing", "Caching"],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 12,
-      title: "Database Design and Optimization",
-      description:
-        "Database design and optimization involve designing efficient database structures and optimizing queries for improved performance.",
-      image:
-        "https://i.ibb.co/bFw97Jr/Database-Design-and-Optimization-min.jpg",
-      keyFeatures: [
-        "Database schema design",
-        "Query optimization",
-        "Data integrity",
-      ],
-      technologies: [
-        "Relational databases",
-        "NoSQL databases (e.g., MongoDB)",
-        "Indexing techniques",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 13,
-      title: "Performance Optimization",
-      description:
-        "Performance optimization focuses on improving the speed and efficiency of web applications.",
-      image: "https://i.ibb.co/tmHGkT5/Performance-Optimization-min.jpg",
-      keyFeatures: [
-        "Code optimization, caching",
-        "Image compression",
-        "Lazy loading",
-      ],
-      technologies: [
-        "Performance profiling tools",
-        "Caching strategies",
-        "Image optimization libraries",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 14,
-      title: "Maintenance and Support",
-      description:
-        " Maintenance and support services ensure the smooth operation and ongoing improvement of web applications.",
-      image: "https://i.ibb.co/VwfB6P8/Maintenance-and-Support-min.jpg",
-      keyFeatures: [
-        " Bug fixing, updates",
-        "Security patches",
-        "Technical support",
-      ],
-      technologies: [
-        "Issue tracking systems",
-        "Version control",
-        "Monitoring tools",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    {
-      id: 15,
-      title: "Project Manager",
-      description:
-        "A project manager oversees the development process, coordinating team efforts and ensuring project success.",
-      image: "https://i.ibb.co/PNWzmqn/Project-Manager-min.jpg",
-      keyFeatures: [
-        "Planning and organizing project resources",
-        "Setting goals",
-        "Managing communication and stakeholders",
-      ],
-      technologies: [
-        "Project management tools",
-        "Communication tools",
-        "Documentation tools",
-      ],
-      githubLink: "https://github.com/your-username/project-b",
-      liveDemoLink: "https://www.example.com/project-b",
-    },
-    // Add more Services here...
-  ]);    
+  {
+    id: 1,
+    title: "Premium Cabinets: 2-Door, Multi-Door & Custom Kitchen Solutions",
+    description:
+      "Al-FWZ Trading and Contracting offers premium-quality cabinets, including 2-door cabinets, multiple-door cabinets, and custom kitchen cabinets. Our designs prioritize functionality, durability, and aesthetics, ensuring a perfect fit for your space.",
+    image: [
+      "https://8upload.com/image/67a8c9926174a/Cabinet.jpg",
+   
+    ],
+    galleryImage: [
+      "https://8upload.com/image/67a81cba8e881/Cabinet_8.jpg",
+      "https://8upload.com/image/67a81cbadbd14/Cabinet_6.jpg",
+      "https://8upload.com/image/67a81cbb04458/Cabinet_5.jpg",
+      "https://8upload.com/image/67a81cbb26dbd/Cabinet_3.jpg",
+      "https://8upload.com/image/67a81cbb4e3bf/Cabinet_2.jpg",
+      "https://8upload.com/image/67a81cbb73cdd/Cabinet_1.jpg"
+    ],
+    keyFeatures: [
+      "Custom-built to fit your space",
+      "High-quality materials and finishes",
+      "Optimized storage solutions",
+      "Durable and long-lasting construction",
+      "Modern and traditional design options"
+    ],
+    technologies: [
+      "Premium Wood (Oak, Mahogany, MDF, Plywood)",
+      "High-Quality Laminates & Veneers",
+      "Soft-Close Hinges & Handles",
+      "Water & Scratch-Resistant Coatings",
+      "CNC Precision Cutting & Finishing"
+    ],
+    githubLink: "https://github.com/your-username/cabinets-project",
+    liveDemoLink: "https://www.example.com/al-fwz-cabinets",
+    faceBook: "https://www.facebook.com/alfwz.cabinets",
+    instaGram: "https://www.instagram.com/alfwz.cabinets"
+  },
+  {
+    id: 2,
+    title: "Luxury Beds: Single, Baby, King, Queen & Custom Sizes",
+    description: 
+      "Our premium collection of beds includes single beds, baby beds, king and queen-sized beds, as well as fully customizable options tailored to your comfort and style preferences.",
+    image: "https://8upload.com/image/67a8ca9ec7e1b/Bed.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8207ecfe0e/Beds_2.jpg",
+      "https://8upload.com/image/67a8207ea8494/Beds_3.jpg",
+      "https://8upload.com/image/67a8207e83061/Beds_4.jpg",
+      "https://8upload.com/image/67a8207e5e1d1/Beds_5.jpg",
+      "https://8upload.com/image/67a8207e39eab/Beds_6.jpg",
+      "https://8upload.com/image/67a8207e125cf/Beds_7.jpg"
+    ],
+    keyFeatures: [
+      "Premium quality materials",
+      "Custom size options",
+      "Ergonomic and stylish designs",
+      "Durability and comfort"
+    ],
+    technologies: [
+      "High-quality wood and metal frames",
+      "Premium upholstery and cushioning",
+      "Modern and classic bed designs",
+      "Customization available"
+    ],
+    githubLink: "https://github.com/your-username/luxury-beds",
+    liveDemoLink: "https://www.example.com/luxury-beds"
+  },
   
+  {
+    id: 3,
+    title: "Premium Curtains Collection: Vertical, Blinds, Rollers & Custom Designs",
+    "description": 
+      "Explore our exquisite range of curtains, including vertical, blind, roller, and fully customizable designs, crafted to enhance your interiors with elegance and functionality.",
+    image: "https://8upload.com/image/67a8ccc8b4b82/Curtains.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8cf5dc8936/Curtain1.jpg",
+      "https://8upload.com/image/67a8cf5d9f8b9/Curtain2.jpg",
+      "https://8upload.com/image/67a8cf5d53786/Curtain4.jpg",
+      "https://8upload.com/image/67a8cf5d7b5ea/Curtain3.jpg",
+      "https://8upload.com/image/67a8cf5d31a18/Curtain5.jpg",
+      "https://8upload.com/image/67a8cf5d0a402/Curtain6.jpg"
+    ],
+    keyFeatures: [
+      "High-quality fabric options",
+      "Custom sizing & designs",
+      "Light-filtering & blackout options",
+      "Durable & easy to maintain"
+    ],
+    technologies: [
+      "Premium textiles & fabrics",
+      "Automated & manual curtain systems",
+      "Eco-friendly & UV-protective materials",
+      "Smart home integration available"
+    ],
+    githubLink: "https://github.com/your-username/curtains-collection",
+    liveDemoLink: "https://www.example.com/curtains-collection"
+  },
+  
+  {
+    id: 4,
+    title: "Premium Carpets & Mats Collection: Green Carpets, Custom Rugs & More",
+    "description": "Discover our wide selection of high-quality carpets and mats, including green carpets, custom rugs, and stylish mats designed to enhance comfort and aesthetics in any space.",
+    image: "https://8upload.com/image/67a8d4e4d1d27/carpet__1_-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8d4e4adcef/Carpet2-min.jpg",
+      "https://8upload.com/image/67a8d4e483989/Carpet1-min.jpg",
+      "https://8upload.com/image/67a8d4e4371f3/Carpet3-min.jpg",
+      "https://8upload.com/image/67a8d4e45c8ec/Carpet4-min.jpg",
+      "https://8upload.com/image/67a8d4e410078/Carpet6-min.jpg",
+      "https://8upload.com/image/67a8d4e3da251/Carpet5-min.jpg"
+    ],
+    keyFeatures: [
+      "Premium-quality materials",
+      "Custom sizes & designs available",
+      "Eco-friendly & sustainable options",
+      "Easy to clean & maintain",
+      "Soft texture & durable build"
+    ],
+    technologies: [
+      "High-density fabric weaving",
+      "Anti-slip backing technology",
+      "Water-resistant & stain-proof materials",
+      "UV-protected outdoor carpet options"
+    ],
+    githubLink: "https://github.com/your-username/carpets-mats",
+    liveDemoLink: "https://www.example.com/carpets-mats"
+  },
+  
+  {
+    id: 5,
+    title: "Sofa, Sofa Making, Sofa Upholstery, Leather Sofa",
+    description: "Explore our expert services in sofa making, custom upholstery, and premium leather sofas. We provide high-quality craftsmanship for comfort and style in every design.",
+    image: "https://8upload.com/image/67a8d90f3f56b/Sofa-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8d91018f70/Sofa6-min.jpg",
+      "https://8upload.com/image/67a8d90fec868/Sofa5-min.jpg",
+      "https://8upload.com/image/67a8d90faa7cd/Sofa3-min.jpg",
+        "https://8upload.com/image/67a8d90f663ea/Sofa1-min.jpg",
+      "https://8upload.com/image/67a8d90fcabd7/Sofa4-min.jpg",
+      "https://8upload.com/image/67a8d90f8762a/Sofa2-min.jpg"
+    
+    ],
+    keyFeatures: [
+      "Custom sofa designs tailored to your style",
+      "High-quality leather and fabric upholstery",
+      "Expert craftsmanship and attention to detail",
+      "Comfort and durability guaranteed",
+      "Sofa repair and restoration services available"
+    ],
+    technologies: [
+      "Advanced upholstery techniques",
+      "Custom-built frames for durability",
+      "Eco-friendly materials",
+      "Top-grade leather selection"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+  
+  {
+    id: 6,
+    title: "TV Stand, Wallsheet, Wall Decoration",
+    description: "Explore our exquisite collection of TV stands, wallsheets, and wall decoration designs. Perfect for enhancing the aesthetic appeal of your living spaces with style and functionality.",
+    image: "https://8upload.com/image/67a8de6b1709c/Wallsheet-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8de6b5a8aa/Wallsheet2-min.jpg",
+      "https://8upload.com/image/67a8de6b7c7d7/Wallsheet3-min.jpg",
+      "https://8upload.com/image/67a8de6b3b0c5/Wallsheet1-min.jpg",
+      "https://8upload.com/image/67a8de6b9bf3c/Wallsheet4-min.jpg",
+      "https://8upload.com/image/67a8de6bbb488/Wallsheet5-min.jpg",
+      "https://8upload.com/image/67a8de6bed98b/Wallsheet6-min.jpg"
+    ],
+    keyFeatures: [
+      "Custom TV stands tailored to your space",
+      "Elegant and durable wallsheet designs",
+      "Unique wall decoration pieces for every room",
+      "Wide variety of materials and finishes",
+      "Easy installation and maintenance"
+    ],
+    technologies: [
+      "Modern design techniques",
+      "Eco-friendly materials",
+      "Customizable finishes",
+      "Sustainable production methods"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+  {
+    id: 7,
+    title: "Arabic Mojlish Making and Upholstery",
+    description: "Explore our expert services in Arabic Mojlish making and upholstery. We specialize in crafting traditional and contemporary Mojlish designs, offering comfort and luxury for every space.",
+    image: "https://8upload.com/image/67a8e57bcecce/Mojlish-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8e57c21581/Mojlish3-min.jpg",
+      "https://8upload.com/image/67a8e57c404d8/Mojlish4-min.jpg",
+      "https://8upload.com/image/67a8e57ba7e95/Mojlish1-min.jpg",
+      "https://8upload.com/image/67a8e57c00cfa/Mijlish2-min.jpg",
+      "https://8upload.com/image/67a8e57c645c7/Mojlish5-min.jpg",
+      "https://8upload.com/image/67a8e57c871f3/Mojlish6-min.jpg"
+    ],
+    keyFeatures: [
+      "Custom Arabic Mojlish designs",
+      "Premium upholstery materials",
+      "Traditional and modern styles",
+      "Comfort and durability guaranteed",
+      "Expert craftsmanship in every piece"
+    ],
+    technologies: [
+      "Advanced upholstery techniques",
+      "Custom-built frames for Mojlish",
+      "Premium fabrics and leather selections",
+      "Eco-friendly materials"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+  {
+    id: 8,
+    title: "Professional Wallpaper Installation & Removal Services",
+    description: "Transform your interiors with our expert wallpaper installation and removal services. We offer a diverse range of premium wallpapers and seamless fitting for a flawless finish.",
+    image: "https://8upload.com/image/67a8ebfbd5861/Wallpaper-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8ebfc49abc/Wallpaper3-min.jpg",
+      "https://8upload.com/image/67a8ebfc69e07/Wallpaper4-min.jpg",
+      "https://8upload.com/image/67a8ebfc081ac/Wallpaper1-min.jpg",
+      "https://8upload.com/image/67a8ebfc26e20/Wallpaper2-min.jpg",
+      "https://8upload.com/image/67a8ebfc9038e/Wallpaper5-min.jpg",
+      "https://8upload.com/image/67a8ebfcb1e32/Wallpaper6-min.jpg"
+    ],
+    keyFeatures: [
+      "Professional wallpaper installation with precision",
+      "Seamless removal without surface damage",
+      "Extensive collection of designs and textures",
+      "Durable, high-quality, and eco-friendly materials",
+      "Mess-free and efficient service for homes and offices"
+    ],
+    technologies: [
+      "Advanced adhesive and fitting techniques",
+      "Eco-friendly, washable, and long-lasting wallpapers",
+      "Precision tools for perfect alignment",
+      "Custom wallpaper printing and design solutions"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+  {
+    id: 9,
+    title: "Aluminum Services: Parking Shades, Cabinets, Ceilings, Windows, Doors & More",
+    description: "We specialize in high-quality aluminum fabrication and installation services, offering customized solutions for parking shades, cabinets, ceilings, windows, doors, and more to enhance durability and aesthetics.",
+    image: "https://8upload.com/image/67a8f13f8a660/Door-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8f13fcfa4c/Door2-min.jpg",
+      "https://8upload.com/image/67a8f1401ce64/Door4-min.jpg",
+      "https://8upload.com/image/67a8f13fafdaf/Door1-min.jpg",
+      "https://8upload.com/image/67a8f13ff2656/Door3-min.jpg",
+           "https://8upload.com/image/67a8f1403d767/Door5-min.jpg",
+      "https://8upload.com/image/67a8f14060a54/Door6-min.jpg"
+    ],
+    keyFeatures: [
+      "Custom aluminum fabrication and installation",
+      "Durable, weather-resistant materials",
+      "Modern and stylish designs for residential & commercial spaces",
+      "High-quality finishing for long-lasting performance",
+      "Precision engineering for seamless fitting"
+    ],
+    technologies: [
+      "Advanced aluminum processing techniques",
+      "Powder coating for enhanced durability",
+      "Eco-friendly and corrosion-resistant materials",
+      "Precision laser cutting and fabrication"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+  {
+    id: 10,
+    title: "Wooden Flooring Solutions: Barkia, Parquet, PVC Tiles & Mats",
+    description: "Enhance your space with premium wooden flooring solutions, including parquet, PVC tiles, and mats. Our durable and stylish flooring options are designed for homes, offices, and commercial spaces.",
+    image: "https://8upload.com/image/67a8f6cd8dc6c/SPC-min.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8f6cdb3e08/SPC3__1_-min.jpg",
+      "https://8upload.com/image/67a8f6cdd3705/SPC4__1_-min.jpg",
+      "https://8upload.com/image/67a8f6ce03bfd/SPC5__1_-min.jpg",
+      "https://8upload.com/image/67a8f6ce2483c/SPC6__1_-min.jpg",
+      "https://8upload.com/image/67a8f6ce477b6/SPC2__1_-min.jpg",
+      "https://8upload.com/image/67a8f6cd68452/SPC1__1_-min.jpg"
+    ],
+    keyFeatures: [
+      "High-quality wooden and PVC flooring solutions",
+      "Custom sizes and designs available",
+      "Water-resistant and easy to maintain",
+      "Durable and long-lasting materials",
+      "Professional installation services"
+    ],
+    technologies: [
+      "Precision-cut parquet wood panels",
+      "Waterproof and scratch-resistant PVC materials",
+      "Eco-friendly and sustainable flooring options",
+      "Advanced adhesive and installation techniques"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+   
+  {
+    id: 11,
+    title: "Office & Home Furniture Solutions",
+    description: "Discover a premium range of office and home furniture, including desks, chairs, sofas, cabinets, and custom-made designs to enhance comfort and style.",
+    "image": "https://8upload.com/image/67a8fad25be50/Office__1_-min__1_.jpg",
+    galleryImage: [
+      "https://8upload.com/image/67a8f9fd0fe9a/Office_1-min.jpg",
+      "https://8upload.com/image/67a8f9fd32d9c/Office2-min.jpg",
+      "https://8upload.com/image/67a8f9fd5d090/Office3-min.jpg",
+      "https://8upload.com/image/67a8f9fd810f2/Office4-min.jpg",
+      "https://8upload.com/image/67a8f9fd9fe5f/Office_5-min.jpg",
+      "https://8upload.com/image/67a8f9fdc2716/Office_6-min.jpg"
+    ],
+    keyFeatures: [
+      "High-quality office and home furniture",
+      "Modern and ergonomic designs",
+      "Customizable sizes and materials",
+      "Durable and long-lasting build",
+      "Professional installation available"
+    ],
+    technologies: [
+      "Precision wood and metal crafting",
+      "Eco-friendly and durable materials",
+      "Advanced upholstery and finishing techniques",
+      "Ergonomic and space-saving designs"
+    ],
+    githubLink: "https://github.com/your-username/project-b",
+    liveDemoLink: "https://www.example.com/project-b"
+  },
+  
+ 
+    // Add more Services here...
+  ]);   
+   
+  const [activeTheme] = useThemeSwitcher();
   const [selectedProject, setSelectedProject] = useState(null); // Stores the currently selected project 
   const [previousScrollPosition, setPreviousScrollPosition] = useState(0); // Saves the previous scroll position
   const [showAllServices, setShowAllServices] = useState(false); // Toggles between limited and full service list
@@ -324,6 +361,8 @@ const [Services, setServices] = useState([
 
   // Reference for the details section (used for scrolling to details)
   const detailsRef = useRef(null);
+
+ 
 
   /**
  * Handles clicking on a project to display its details.
@@ -351,6 +390,16 @@ const handleProjectClick = (project) => {
 };
 
 
+const [expandedCards, setExpandedCards] = useState({});
+
+const toggleReadMore = (id) => {
+  setExpandedCards((prevState) => ({
+    ...prevState,
+    [id]: !prevState[id],
+  }));
+};
+
+const shortTextLength = 100; // Adjust the character limit
 
 
   /**
@@ -388,9 +437,9 @@ const handleProjectClick = (project) => {
   const displayedServices = showAllServices ? Services : Services.slice(0, 15);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="  px-6 py-10 lg:py-16 bg-[#F5F5DC] dark:bg-gray-800 dark:text-gray-100">
       {/* Header Section */}
-      <h1 className="text-center text-3xl font-bold mb-4">Our Services</h1>
+      <h1 className="text-center text-3xl font-bold mb-4">Our <span className="text-[#6B4226]">Services</span></h1>
       <h2 className="text-center text-lg font-semibold mb-12">
         Delivering High-Quality Solutions to Meet Your Needs
       </h2>
@@ -411,7 +460,7 @@ const handleProjectClick = (project) => {
         <img
           src={selectedProject.image}
           alt={selectedProject.title}
-          className="w-full object-cover"
+          className=" w-full object-cover"
         />
       </div>
 
@@ -492,24 +541,30 @@ const handleProjectClick = (project) => {
         </button>
       </div> */}
 
-      <div className="flex flex-wrap justify-center pt-6 gap-4">
+      <div className="flex justify-center pt-6 gap-4">
   {/* Back to Services Button */}
+  <div>
   <button
-    className="flex items-center bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 hover:drop-shadow-lg transition duration-300 text-base sm:text-lg"
+    className={` btn-hero bg-[#6B4226] text-white px-12 py-3 rounded-lg font-semibold hover:bg-[#8B5A2B] transition-all duration-300 ${
+                activeTheme === "dark" ? "dark-mode-text" : ""
+              }`}
     onClick={handleCloseProject}
   >
     <FaArrowLeft className="mr-2 text-lg sm:text-xl" /> Back to Services
   </button>
+  </div>
 
   {/* Book an Appointment Button (WhatsApp) */}
-  <a
+ <div>
+ <a
     href="https://wa.me/88096961174037" // Replace with your WhatsApp number
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-800 hover:drop-shadow-lg transition duration-300 text-base sm:text-lg"
+    className="w-full btn-hero flex items-center bg-[#27ae60] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#219653] transition-all duration-300"
   >
     Book an Appointment <FaWhatsapp className="ml-2 text-lg sm:text-xl" />
   </a>
+ </div>
 </div>
 
 
@@ -518,87 +573,59 @@ const handleProjectClick = (project) => {
           )}
         </Transition>
       ) : (
-        <div>
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
-  {displayedServices.map((project) => (
-    <Transition
-      key={project.id}
-      in={true}
-      timeout={300}
-      mountOnEnter
-      unmountOnExit
-    >
-      {(state) => (
-        <div
-          className={`bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 ${articleTransitionStyles[state]} flex flex-col`}
-        >
-          <div className="flex-grow p-4">
-            {/* Project Image */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full rounded-lg mb-4"
-            />
-            {/* Project Title and Short Description */}
-            <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-gray-500 mb-4">{project.description}</p>
-          </div>
-
-          {/* Fixed Button at Bottom */}
-          {/* <div className="p-4 flex justify-center mt-auto">
-            <button
-              className="w-full flex items-center justify-center bg-black text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 hover:drop-shadow-lg transition"
-              onClick={() => handleProjectClick(project)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+      {displayedServices.map((project) => (
+        <Transition key={project.id} in={true} timeout={300} mountOnEnter unmountOnExit>
+          {(state) => (
+            <div
+              className={`bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 ${state} flex flex-col`}
             >
-              Details More <FaArrowRight className="ml-2" />
-            </button>
-          </div> */}
+              {/* Project Image */}
+              <img src={project.image} alt={project.title} className="w-full rounded-lg mb-4" />
 
-          <div className="p-4 flex flex-wrap justify-center mt-auto gap-4">
-  {/* Details More Button */}
-  <button
-    className="w-full sm:w-auto flex items-center justify-center bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 hover:drop-shadow-lg transition duration-300 text-base sm:text-lg"
-    onClick={() => handleProjectClick(project)}
-  >
-    Details More <FaArrowRight className="ml-2 text-xl sm:text-2xl" />
-  </button>
+              {/* Project Title */}
+              <h2 className="text-xl font-semibold mb-2 px-4">{project.title}</h2>
 
-  {/* Book an Appointment Button (WhatsApp) */}
-  <a
-    href="https://wa.me/88096961174037" // Replace with your WhatsApp number
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full sm:w-auto flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-800 hover:drop-shadow-lg transition duration-300 text-base sm:text-lg"
-  >
-    Book an Appointment <FaWhatsapp className="ml-2 text-xl sm:text-2xl" />
-  </a>
-</div>
+              {/* Project Description with Read More */}
+              <p className="text-gray-500 mb-4 px-4">
+                {expandedCards[project.id]
+                  ? project.description
+                  : `${project.description.slice(0, shortTextLength)}...`}
+                {project.description.length > shortTextLength && (
+                  <button
+                    onClick={() => toggleReadMore(project.id)}
+                    className="text-blue-600 hover:underline ml-2"
+                  >
+                    {expandedCards[project.id] ? "Show Less" : "Read More"}
+                  </button>
+                )}
+              </p>
 
+              {/* Buttons Section */}
+              <div className="p-4 flex flex-wrap justify-center mt-auto gap-4">
+                {/* Details More Button */}
+                <button
+                  className="w-full btn-hero bg-[#6B4226] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#8B5A2B] transition-all duration-300"
+                  onClick={() => handleProjectClick(project)}
+                >
+                  Details More <FaArrowRight className="ml-2 text-xl sm:text-2xl" />
+                </button>
 
-        </div>
-      )}
-    </Transition>
-  ))}
-</div>
-
-
-
-          {/* See More / Show Less Buttons */}
-          {/* {!showAllServices ? (
-            <div className="flex justify-center">
-              <button className="btn" onClick={handleShowAllServices}>
-                See More
-              </button>
+                {/* Book an Appointment Button (WhatsApp) */}
+                <a
+                  href="https://wa.me/88096961174037"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full btn-hero flex items-center bg-[#27ae60] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#219653] transition-all duration-300"
+                >
+                  Book an Appointment <FaWhatsapp className="ml-2 text-xl sm:text-2xl" />
+                </a>
+              </div>
             </div>
-          ) : (
-            <div className="flex justify-center">
-              <button className="btn" onClick={() => setShowAllServices(false)}>
-                Show Less
-              </button>
-            </div>
-          )} */}
-        </div>
+          )}
+        </Transition>
+      ))}
+    </div>
       )}
     </div>
   );

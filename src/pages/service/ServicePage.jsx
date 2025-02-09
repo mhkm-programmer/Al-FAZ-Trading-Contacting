@@ -1,14 +1,14 @@
+import PageTitle from "../reusable/PageTitle";
+import ParallaxSection from "../reusable/Parallax";
 import React from "react";
 import RecentServiceCard from "./RecentServiceCard";
-import ParallaxSection from "../reusable/Parallax";
-import PageTitle from "../reusable/PageTitle";
 
 const ServicePage = () => {
   return (
     <div>
-     <PageTitle title="mhkm-programmer | Service" />
+     <PageTitle title="AL-FWZ Trading & Contracting | Services" />
       <ParallaxSection
-        imagePath="https://i.ibb.co/bJ6rJQC/coding-man-1-min.jpg"
+        imagePath="https://8upload.com/image/67a809e2eb5f0/Services.jpg"
         title=""
         subTitle=""
       />

@@ -1,16 +1,15 @@
-import React from "react";
-
 import AboutMe from "./AboutMe";
+import PageTitle from "../reusable/PageTitle";
 import Parallax from "../reusable/Parallax";
 import ParallaxSection from "../reusable/Parallax";
-import PageTitle from "../reusable/PageTitle";
+import React from "react";
 
 const AboutMePage = () => {
   return (
     <div>
-     <PageTitle title="mhkm-programmer | About Me" />
+     <PageTitle title="AL-FWZ Trading & Contracting | About Us" />
       <ParallaxSection
-        imagePath="https://i.ibb.co/CHCNVdF/About-Me-Transparent-PNG.jpg"
+        imagePath="https://8upload.com/image/67a7f51fa667f/About_Us-min.jpg"
         title=""
         subTitle=""
       />

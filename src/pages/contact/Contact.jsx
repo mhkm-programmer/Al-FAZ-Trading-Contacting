@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
+import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 
 const Contact = () => {
+  const [activeTheme] = useThemeSwitcher();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -55,11 +57,10 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl font-semibold text-gray-900 mb-4">Contact Us</h1>
-        <p className="lg:px-18 text-lg text-gray-600">
-          At AL-FWZ Trading and Contracting, we specialize in providing custom furniture, expert upholstery, and interior design solutions. Our team is dedicated to helping you create spaces that reflect your style and functionality needs.
+        <h1 className="text-4xl font-semibold text-[#6B4226] mb-4">Contact Us</h1>
+        <p className="lg:px-18 text-lg text-gray-600 max-w-2xl mx-auto">
+          At LuxeFurnish, we specialize in crafting custom furniture, offering expert upholstery, and providing interior design solutions. Let us help you create spaces that reflect your style and functionality needs.
         </p>
-        
       </motion.div>
 
       <section className="grid lg:grid-cols-2 gap-8">
@@ -85,69 +86,68 @@ const Contact = () => {
           transition={{ delay: 0.5 }}
           className="bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between"
         >
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
+          <h2 className="text-2xl font-semibold text-[#6B4226] mb-4">Contact Information</h2>
           <div className="mb-6 text-gray-700">
             <p className="mb-2">
-              <strong>Location:</strong> Souq al Haraj, Shop No. 283, Main Road, Najma, Doha, Qatar
-            </p>
-            <p className="mb-2">
-              <strong>Zone:</strong> Zone 26, Street 850, Building 34, Unit 17
+              <strong>Location:</strong> 123 Woodland Ave, Suite 456, Springfield, IL, USA
             </p>
             <p className="mb-2">
               <strong>Email:</strong>{' '}
-              <a href="mailto:mhkm.abraham@gmail.com" className="text-blue-600 hover:text-blue-800">
-                mhkm.abraham@gmail.com
+              <a href="mailto:info@luxefurnish.com" className="text-[#8B5A2B] hover:text-[#6B4226]">
+                info@luxefurnish.com
               </a>
             </p>
             <p className="mb-2">
               <strong>Phone:</strong>{' '}
-              <a href="tel:+88096961174037" className="text-blue-600 hover:text-blue-800">
-                +88096961174037
+              <a href="tel:+1234567890" className="text-[#8B5A2B] hover:text-[#6B4226]">
+                +1 234 567 890
               </a>
             </p>
             <p className="mb-2">
-              <strong>Business Hours:</strong> Sunday - Thursday: 9:00 AM - 6:00 PM
+              <strong>Business Hours:</strong> Monday - Friday: 9:00 AM - 6:00 PM
             </p>
             <p className="mb-4">
               <strong>Available for consultations and project inquiries.</strong>
             </p>
           </div>
 
+          {/* Social Media Links */}
           <div className="flex gap-6 my-6">
-  <a
-    href="tel:+88096961174037"
-    className="text-blue-600 hover:text-blue-800"
-  >
-    <FaPhoneAlt size={32} />
-  </a>
-  <a
-    href="https://www.facebook.com/mhkm.programmer"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-blue-600 hover:text-blue-800"
-  >
-    <FaFacebook size={32} />
-  </a>
-  <a
-    href="https://www.instagram.com/mhkm.programmer/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-pink-600 hover:text-pink-800"
-  >
-    <FaInstagram size={32} />
-  </a>
-  <a
-    href="https://wa.me/88096961174037"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-green-600 hover:text-green-800"
-  >
-    <FaWhatsapp size={32} />
-  </a>
-</div>
+            <a
+              href="tel:+1234567890"
+              className="text-[#8B5A2B] hover:text-[#6B4226]"
+            >
+              <FaPhoneAlt size={32} />
+            </a>
+            <a
+              href="https://www.facebook.com/luxefurnish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#8B5A2B] hover:text-[#6B4226]"
+            >
+              <FaFacebook size={32} />
+            </a>
+            <a
+              href="https://www.instagram.com/luxefurnish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#8B5A2B] hover:text-[#6B4226]"
+            >
+              <FaInstagram size={32} />
+            </a>
+            <a
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#8B5A2B] hover:text-[#6B4226]"
+            >
+              <FaWhatsapp size={32} />
+            </a>
+          </div>
 
+          {/* Contact Form */}
           <p className="text-gray-600 mb-4">
-            Fill out the form below and our team will get back to you as soon as possible. We value your inquiries and will ensure that your needs are addressed promptly.
+            Fill out the form below, and our team will get back to you as soon as possible. We value your inquiries and will ensure that your needs are addressed promptly.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -159,7 +159,7 @@ const Contact = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B4226]"
                 required
               />
             </div>
@@ -172,7 +172,7 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B4226]"
                 required
               />
             </div>
@@ -184,7 +184,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B4226]"
                 rows="4"
                 required
               ></textarea>
@@ -192,7 +192,9 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="w-full p-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none"
+              className={` btn-hero w-full bg-[#6B4226] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#8B5A2B] transition-all duration-300 ${
+                activeTheme === "dark" ? "dark-mode-text" : ""
+              }`}
             >
               Send Message
             </button>
@@ -201,8 +203,6 @@ const Contact = () => {
           {status && <p className="text-center text-gray-600 mt-4">{status}</p>}
         </motion.div>
       </section>
-      
-   
     </div>
   );
 };
