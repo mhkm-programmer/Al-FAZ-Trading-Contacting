@@ -90,7 +90,7 @@ const AboutUs = () => {
           Let’s create something beautiful together. Reach out to us today!
         </p>
         <div className="flex flex-wrap justify-center gap-6">
-          <a href="mailto:info@luxefurnish.com" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
+          <a href="mailto:qatarwintrading@gmail.com" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
             <FaEnvelope size={24} /> info@alfwztrading.com
           </a>
           <a href="tel:+97455760872" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
@@ -99,7 +99,7 @@ const AboutUs = () => {
           <a href="https://www.instagram.com/luxefurnish" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
             <FaInstagram size={24} /> Instagram
           </a>
-          <a href="https://www.facebook.com/luxefurnish" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
+          <a href="https://www.facebook.com/share/17x1p2tygr/" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
             <FaFacebook size={24} /> Facebook
           </a>
           <a href="https://wa.me/+97455760872" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">

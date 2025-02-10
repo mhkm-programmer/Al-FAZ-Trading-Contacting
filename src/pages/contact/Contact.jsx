@@ -72,7 +72,7 @@ const Contact = () => {
           className="lg:h-[500px] h-[350px] w-full mb-8 rounded-lg overflow-hidden"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1477.664232353121!2d90.41860391161788!3d23.730451619137614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1684651400539!5m2!1sen!2sbd"
+            src="https://www.google.com/maps/place/25%C2%B016'10.9%22N+51%C2%B032'24.2%22E/@25.2698486,51.5399093,19.75z/data=!4m4!3m3!8m2!3d25.2696943!4d51.5400557?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3Dhttps://www.google.com/maps/place/25%C2%B016'10.9%22N+51%C2%B032'24.2%22E/@25.2698486,51.5399093,19.75z/data=!4m4!3m3!8m2!3d25.2696943!4d51.5400557?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
             className="w-full h-full rounded-lg"
             title="Google Map Location"
             allowFullScreen
@@ -89,12 +89,12 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold text-[#6B4226] mb-4">Contact Information</h2>
           <div className="mb-6 text-gray-700">
             <p className="mb-2">
-              <strong>Location:</strong> 123 Woodland Ave, Suite 456, Springfield, IL, USA
+              <strong>Location:</strong> 26 Zone, 850 Al Mansoura Street, 34 Building, 17 Unit
             </p>
             <p className="mb-2">
               <strong>Email:</strong>{' '}
-              <a href="mailto:info@luxefurnish.com" className="text-[#8B5A2B] hover:text-[#6B4226]">
-                info@luxefurnish.com
+              <a href="mailto:qatarwintrading@gmail.com" className="text-[#8B5A2B] hover:text-[#6B4226]">
+              qatarwintrading@gmail.com
               </a>
             </p>
             <p className="mb-2">
@@ -104,7 +104,8 @@ const Contact = () => {
               </a>
             </p>
             <p className="mb-2">
-              <strong>Business Hours:</strong> Monday - Friday: 9:00 AM - 6:00 PM
+              <strong>Business Hours:</strong> Saturday - Thursday: 8:00 AM - 1:00 PM & 3:30 PM - 10:00 PM
+              <strong>Business Hours:</strong> Friday: 3:30 PM - 10:00 PM
             </p>
             <p className="mb-4">
               <strong>Available for consultations and project inquiries.</strong>
@@ -114,13 +115,13 @@ const Contact = () => {
           {/* Social Media Links */}
           <div className="flex gap-6 my-6">
             <a
-              href="tel:+1234567890"
+              href="tel:+97455760872"
               className="text-[#8B5A2B] hover:text-[#6B4226]"
             >
               <FaPhoneAlt size={32} />
             </a>
             <a
-              href="https://www.facebook.com/luxefurnish"
+              href="https://www.facebook.com/share/17x1p2tygr/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#8B5A2B] hover:text-[#6B4226]"
@@ -136,7 +137,7 @@ const Contact = () => {
               <FaInstagram size={32} />
             </a>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/+97455760872"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#8B5A2B] hover:text-[#6B4226]"

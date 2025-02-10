@@ -33,7 +33,7 @@ const OurClient = () => {
   ));
 
   return (
-    <section className="py-12 bg-[#F5F5DC] dark:bg-gray-800">
+    <section className="py-8 bg-[#F5F5DC] dark:bg-gray-800">
       <div className="container px-6 mx-auto space-y-6 text-center lg:px-8 lg:space-y-8">
         <h2 className="text-3xl font-bold text-[#6B4226] mb-4">Our Valued Clients</h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">

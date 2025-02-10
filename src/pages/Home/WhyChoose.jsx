@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyChoose = () => {
   return (
-    <section className="px-6 py-10 lg:py-16 bg-[#F5F5DC] dark:bg-gray-800 dark:text-gray-100">
+    <section className="px-6 py-6 lg:py-8 bg-[#F5F5DC] dark:bg-gray-800 dark:text-gray-100">
       {/* Favicon Logo */}
       <div className="flex items-center justify-center mb-8">
         <img 

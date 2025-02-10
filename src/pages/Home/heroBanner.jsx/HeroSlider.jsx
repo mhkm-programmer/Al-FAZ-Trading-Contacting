@@ -74,7 +74,7 @@ const HeroSlider = () => {
             <div className="flex flex-col items-center space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
               {/* Visit Showroom */}
               <a
-                href="https://www.google.com/maps?q=25.276987,51.520008"
+                href="https://www.google.com/maps/place/25%C2%B016'10.9%22N+51%C2%B032'24.2%22E/@25.2698486,51.5399093,19.75z/data=!4m4!3m3!8m2!3d25.2696943!4d51.5400557?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-hero flex items-center bg-[#6B4226] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#8B5A2B] transition-all duration-300"
@@ -85,7 +85,7 @@ const HeroSlider = () => {
 
               {/* Book an Appointment */}
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/+97455760872"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-hero flex items-center bg-[#27ae60] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#219653] transition-all duration-300"

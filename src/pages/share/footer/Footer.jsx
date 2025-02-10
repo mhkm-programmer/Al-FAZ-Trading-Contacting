@@ -89,12 +89,12 @@ const Footer = () => {
         <div className="mt-12 border-t border-gray-700 pt-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-400">
-              &copy; 2025 AL-FWZ Trading and Contracting. All rights reserved.
+              &copy; 2025 <a href="/">AL-FWZ Trading and Contracting.</a> All rights reserved.
             </p>
             
             <div className="flex space-x-6">
   <a
-    href="tel:+1234567890"
+    href="tel:+97455760872"
     target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-violet-400 transition duration-300"
@@ -102,7 +102,7 @@ const Footer = () => {
     <FaPhoneAlt size={24} />
   </a>
   <a
-    href="https://www.facebook.com"
+    href="https://www.facebook.com/share/17x1p2tygr/"
     target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-violet-400 transition duration-300"
@@ -118,7 +118,7 @@ const Footer = () => {
     <FaInstagram size={24} />
   </a>
   <a
-    href="https://wa.me/1234567890"
+    href="https://wa.me/+97455760872"
     target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-violet-400 transition duration-300"
@@ -126,7 +126,7 @@ const Footer = () => {
     <FaWhatsapp size={24} />
   </a>
   <a
-    href="mailto:example@gmail.com"
+    href="mailto:qatarwintrading@gmail.com"
     target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-violet-400 transition duration-300"

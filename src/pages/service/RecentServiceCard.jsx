@@ -437,7 +437,7 @@ const shortTextLength = 100; // Adjust the character limit
   const displayedServices = showAllServices ? Services : Services.slice(0, 15);
 
   return (
-    <div className="  px-6 py-10 lg:py-16 bg-[#F5F5DC] dark:bg-gray-800 dark:text-gray-100">
+    <div className="  px-6 py-8 lg:py-10 bg-[#F5F5DC] dark:bg-gray-800 dark:text-gray-100">
       {/* Header Section */}
       <h1 className="text-center text-3xl font-bold mb-4">Our <span className="text-[#6B4226]">Services</span></h1>
       <h2 className="text-center text-lg font-semibold mb-12">
@@ -540,32 +540,32 @@ const shortTextLength = 100; // Adjust the character limit
           <FaArrowLeft className="mr-2" size={16} /> Back to Services
         </button>
       </div> */}
-
-      <div className="flex justify-center pt-6 gap-4">
+      <div className="flex justify-center pt-6 gap-4 flex-wrap">
   {/* Back to Services Button */}
   <div>
-  <button
-    className={` btn-hero bg-[#6B4226] text-white px-12 py-3 rounded-lg font-semibold hover:bg-[#8B5A2B] transition-all duration-300 ${
-                activeTheme === "dark" ? "dark-mode-text" : ""
-              }`}
-    onClick={handleCloseProject}
-  >
-    <FaArrowLeft className="mr-2 text-lg sm:text-xl" /> Back to Services
-  </button>
+    <button
+      className={`btn-hero bg-[#6B4226] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#8B5A2B] transition-all duration-300 ${
+        activeTheme === "dark" ? "dark-mode-text" : ""
+      } text-base sm:text-lg md:text-xl`}
+      onClick={handleCloseProject}
+    >
+      <FaArrowLeft className="mr-2 text-lg sm:text-xl" /> Back to Services
+    </button>
   </div>
 
   {/* Book an Appointment Button (WhatsApp) */}
- <div>
- <a
-    href="https://wa.me/88096961174037" // Replace with your WhatsApp number
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full btn-hero flex items-center bg-[#27ae60] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#219653] transition-all duration-300"
-  >
-    Book an Appointment <FaWhatsapp className="ml-2 text-lg sm:text-xl" />
-  </a>
- </div>
+  <div>
+    <a
+      href="https://wa.me/+97455760872" // Replace with your WhatsApp number
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full btn-hero flex items-center bg-[#27ae60] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#219653] transition-all duration-300 text-base sm:text-lg md:text-xl"
+    >
+      Book an Appointment <FaWhatsapp className="ml-2 text-lg sm:text-xl" />
+    </a>
+  </div>
 </div>
+
 
 
       
@@ -613,7 +613,7 @@ const shortTextLength = 100; // Adjust the character limit
 
                 {/* Book an Appointment Button (WhatsApp) */}
                 <a
-                  href="https://wa.me/88096961174037"
+                  href="https://wa.me/+97455760872"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full btn-hero flex items-center bg-[#27ae60] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#219653] transition-all duration-300"

@@ -47,12 +47,12 @@ const ContactBubble = () => {
 
   return (
     <>
-      {/* 🟢 Draggable Contact Bubble - Positioned on the LEFT side */}
+      {/* 🟢 Draggable Contact Bubble - Positioned Above Scroll Buttons */}
       <Draggable bounds="body">
-        <div className="fixed bottom-20 left-5 flex flex-col items-center space-y-3 z-50">
+        <div className="fixed bottom-32 right-5 flex flex-col items-center space-y-3 z-50">
           {/* WhatsApp */}
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/+97455760872"
             target="_blank"
             rel="noopener noreferrer"
             className="p-4 rounded-full text-white bg-green-500 hover:bg-green-600 shadow-md transition"
@@ -62,7 +62,7 @@ const ContactBubble = () => {
 
           {/* Phone */}
           <a
-            href="tel:+1234567890"
+            href="tel:+97455760872"
             className="p-4 rounded-full text-white bg-blue-500 hover:bg-blue-600 shadow-md transition"
           >
             <FaPhoneAlt size={isMobile ? 22 : 28} />
@@ -70,7 +70,7 @@ const ContactBubble = () => {
 
           {/* Email */}
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:qatarwintrading@gmail.com"
             className="p-4 rounded-full text-white bg-red-500 hover:bg-red-600 shadow-md transition"
           >
             <FaEnvelope size={isMobile ? 22 : 28} />
@@ -88,7 +88,7 @@ const ContactBubble = () => {
 
           {/* Facebook */}
           <a
-            href="https://facebook.com/yourprofile"
+            href="https://www.facebook.com/share/17x1p2tygr/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-4 rounded-full text-white bg-blue-700 hover:bg-blue-800 shadow-md transition"
@@ -98,20 +98,20 @@ const ContactBubble = () => {
         </div>
       </Draggable>
 
-      {/* 🔵 Scroll to Top Button - Positioned on the RIGHT side */}
+      {/* 🔵 Scroll to Top Button - Positioned Below Contact Bubble */}
       {showScrollTop && (
         <button
-          className="fixed bottom-20 right-5 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-900 transition"
+          className="fixed bottom-16 right-5 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-900 transition"
           onClick={scrollToTop}
         >
           <FaArrowUp size={24} />
         </button>
       )}
 
-      {/* 🔴 Scroll to Bottom Button - Positioned on the RIGHT side */}
+      {/* 🔴 Scroll to Bottom Button - Positioned Below Contact Bubble */}
       {showScrollBottom && (
         <button
-          className="fixed bottom-5 right-5 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-900 transition"
+          className="fixed bottom-5 right-5 bg-gray-800 text-white p-3  rounded-full shadow-md hover:bg-gray-900 transition"
           onClick={scrollToBottom}
         >
           <FaArrowDown size={24} />
