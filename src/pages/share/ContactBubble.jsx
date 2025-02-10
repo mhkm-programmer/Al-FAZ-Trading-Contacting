@@ -5,11 +5,9 @@ import {
   FaFacebook,
   FaInstagram,
   FaPhoneAlt,
-  FaWhatsapp
+  FaWhatsapp,
 } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
-
-import Draggable from "react-draggable";
 
 const ContactBubble = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -43,62 +41,61 @@ const ContactBubble = () => {
 
   // Scroll functions
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  const scrollToBottom = () => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+  const scrollToBottom = () =>
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
 
   return (
     <>
-      {/* 🟢 Draggable Contact Bubble - Positioned Above Scroll Buttons */}
-      <Draggable bounds="body" handle=".draggable-handle">
-        <div className="fixed bottom-32 right-5 flex flex-col items-center space-y-3 z-50 draggable-handle touch-none">
-          {/* WhatsApp */}
-          <a
-            href="https://wa.me/+97455760872"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-4 rounded-full text-white bg-green-500 hover:bg-green-600 shadow-md transition"
-          >
-            <FaWhatsapp size={isMobile ? 22 : 28} />
-          </a>
+      {/* 🟢 Contact Bubble - No Longer Draggable */}
+      <div className="fixed bottom-32 right-5 flex flex-col items-center space-y-3 z-50">
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/+97455760872"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 rounded-full text-white bg-green-500 hover:bg-green-600 shadow-md transition"
+        >
+          <FaWhatsapp size={isMobile ? 22 : 28} />
+        </a>
 
-          {/* Phone */}
-          <a
-            href="tel:+97455760872"
-            className="p-4 rounded-full text-white bg-blue-500 hover:bg-blue-600 shadow-md transition"
-          >
-            <FaPhoneAlt size={isMobile ? 22 : 28} />
-          </a>
+        {/* Phone */}
+        <a
+          href="tel:+97455760872"
+          className="p-4 rounded-full text-white bg-blue-500 hover:bg-blue-600 shadow-md transition"
+        >
+          <FaPhoneAlt size={isMobile ? 22 : 28} />
+        </a>
 
-          {/* Email */}
-          <a
-            href="mailto:qatarwintrading@gmail.com"
-            className="p-4 rounded-full text-white bg-red-500 hover:bg-red-600 shadow-md transition"
-          >
-            <FaEnvelope size={isMobile ? 22 : 28} />
-          </a>
+        {/* Email */}
+        <a
+          href="mailto:qatarwintrading@gmail.com"
+          className="p-4 rounded-full text-white bg-red-500 hover:bg-red-600 shadow-md transition"
+        >
+          <FaEnvelope size={isMobile ? 22 : 28} />
+        </a>
 
-          {/* Instagram */}
-          <a
-            href="https://instagram.com/yourprofile"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-4 rounded-full text-white bg-pink-500 hover:bg-pink-600 shadow-md transition"
-          >
-            <FaInstagram size={isMobile ? 22 : 28} />
-          </a>
+        {/* Instagram */}
+        <a
+          href="https://instagram.com/yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 rounded-full text-white bg-pink-500 hover:bg-pink-600 shadow-md transition"
+        >
+          <FaInstagram size={isMobile ? 22 : 28} />
+        </a>
 
-          {/* Facebook */}
-          <a
-            href="https://www.facebook.com/share/17x1p2tygr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-4 rounded-full text-white bg-blue-700 hover:bg-blue-800 shadow-md transition"
-          >
-            <FaFacebook size={isMobile ? 22 : 28} />
-          </a>
-        </div>
-      </Draggable>
+        {/* Facebook */}
+        <a
+          href="https://www.facebook.com/share/17x1p2tygr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 rounded-full text-white bg-blue-700 hover:bg-blue-800 shadow-md transition"
+        >
+          <FaFacebook size={isMobile ? 22 : 28} />
+        </a>
+      </div>
 
-      {/* 🔵 Scroll to Top Button - Positioned Below Contact Bubble */}
+      {/* 🔵 Scroll to Top Button */}
       {showScrollTop && (
         <button
           className="fixed bottom-16 right-5 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-900 transition"
@@ -108,10 +105,10 @@ const ContactBubble = () => {
         </button>
       )}
 
-      {/* 🔴 Scroll to Bottom Button - Positioned Below Contact Bubble */}
+      {/* 🔴 Scroll to Bottom Button */}
       {showScrollBottom && (
         <button
-          className="fixed bottom-5 right-5 bg-gray-800 text-white p-3  rounded-full shadow-md hover:bg-gray-900 transition"
+          className="fixed bottom-5 right-5 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-900 transition"
           onClick={scrollToBottom}
         >
           <FaArrowDown size={24} />
