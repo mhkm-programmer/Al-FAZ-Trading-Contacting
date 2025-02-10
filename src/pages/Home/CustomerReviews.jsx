@@ -34,38 +34,38 @@ const CustomerReviews = () => {
   const items = reviews.map((review, index) => (
     <div
       key={index}
-      className="flex flex-col items-center w-full p-6 space-y-6 rounded-md bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-900 dark:text-gray-100"
+      className="flex flex-col items-center w-full p-6 space-y-6 rounded-lg bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 dark:bg-gray-900 dark:text-gray-100"
     >
       <img
         src={review.image}
         alt={review.name}
-        className="w-20 h-20 rounded-full object-cover border-2 border-[#6B4226]"
+        className="w-24 h-24 rounded-full object-cover border-4 border-[#6B4226] transition-all duration-300 transform hover:scale-110"
       />
-      <blockquote className="max-w-lg text-lg italic font-medium text-center text-gray-600 dark:text-gray-300">
+      <blockquote className="text-xl italic font-medium text-center text-gray-700 dark:text-gray-300">
         "{review.quote}"
       </blockquote>
       <div className="text-center">
-        <p className="font-bold text-[#6B4226] dark:text-[#8B5A2B]">{review.name}</p>
+        <p className="font-semibold text-[#6B4226] dark:text-[#8B5A2B]">{review.name}</p>
         <p className="text-gray-500 dark:text-gray-400">{review.title}</p>
       </div>
     </div>
   ));
 
   return (
-    <section className="py-12 bg-[#F5F5DC] dark:bg-gray-800">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-[#6B4226] text-center mb-10">
+    <section className="py-8 lg:py-12 bg-[#F5F5DC] dark:bg-gray-800">
+      <div className="container  px-6 mx-6">
+        <h2 className="text-4xl font-semibold text-[#6B4226] text-center mb-8">
           What Our Customers Say
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-10">
           Hear from our satisfied clients who have experienced the LuxeFurnish difference.
         </p>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <AliceCarousel
             mouseTracking
             items={items}
             autoPlay
-            autoPlayInterval={3000}
+            autoPlayInterval={3500}
             infinite
             animationDuration={1000}
             disableButtonsControls

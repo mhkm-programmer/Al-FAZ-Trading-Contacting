@@ -48,8 +48,8 @@ const ContactBubble = () => {
   return (
     <>
       {/* 🟢 Draggable Contact Bubble - Positioned Above Scroll Buttons */}
-      <Draggable bounds="body">
-        <div className="fixed bottom-32 right-5 flex flex-col items-center space-y-3 z-50">
+      <Draggable bounds="body" handle=".draggable-handle">
+        <div className="fixed bottom-32 right-5 flex flex-col items-center space-y-3 z-50 draggable-handle touch-none">
           {/* WhatsApp */}
           <a
             href="https://wa.me/+97455760872"
