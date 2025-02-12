@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
 import PageTitle from '../reusable/PageTitle';
+import React from 'react';
 import { motion } from 'framer-motion';
-
 
 const ErrorPage = () => {
     return (
@@ -11,7 +10,7 @@ const ErrorPage = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-        <PageTitle title="mhkm-programmer | Error" />
+        <PageTitle title="AL-FWX Furniture Trading & Contracting | Error" />
         <motion.div
                 className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8"
                 initial={{ x: -100, opacity: 0 }}

@@ -1,7 +1,8 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+import PageTitle from "../reusable/PageTitle";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import PageTitle from "../reusable/PageTitle";
 
 const Terms = () => {
   const containerVariants = {
@@ -11,7 +12,7 @@ const Terms = () => {
 
   return (
     <div>
-    <PageTitle title="mhkm-programmer | Terms & Condition" />
+    <PageTitle title="Al-FWZ Furniture Trading & Contracting | Terms & Condition" />
       <div className="container mx-auto px-4 py-8">
     
     <motion.div

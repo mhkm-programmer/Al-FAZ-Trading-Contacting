@@ -6,7 +6,7 @@ import RecentServiceCard from "./RecentServiceCard";
 const ServicePage = () => {
   return (
     <div>
-     <PageTitle title="AL-FWZ Trading & Contracting | Services" />
+     <PageTitle title="AL-FWZ Furniture Trading & Contracting | Services" />
       <ParallaxSection
         imagePath="https://8upload.com/image/67a809e2eb5f0/Services.jpg"
         title=""

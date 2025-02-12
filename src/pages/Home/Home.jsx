@@ -1,4 +1,3 @@
-import Contact from "../contact/Contact";
 import CustomerReviews from "./CustomerReviews";
 import HeroSlider from "./heroBanner.jsx/HeroSlider";
 import OurClient from "./OurClient";
@@ -10,15 +9,14 @@ import WhyChoose from "./WhyChoose";
 const Home = () => {
   return (
     <div>
-    <PageTitle title="Al-FWZ Trading & Contracting | Home"/>
+    <PageTitle title="Al-FWZ Furniture Trading & Contracting | Home"/>
       <HeroSlider />
-            <RecentServiceCard />
+      <RecentServiceCard />
       {/* <MyProjects />
       <Blog /> */}
       <WhyChoose/>
       <OurClient/>
       <CustomerReviews/>
-    
      <SubscreibeContact/>
     </div>
   );
