@@ -14,7 +14,7 @@ const AboutUs = () => {
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="text-center mb-12 px-4">
-        <h1 className="text-4xl font-bold text-[#6B4226] mb-4">Welcome to AL-FWZ Trading & Contracting</h1>
+        <h1 className="text-4xl font-bold text-[#6B4226] mb-4">Welcome to AL-FWZ Furniture Trading & Contracting</h1>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
           Crafting timeless furniture pieces that blend elegance, comfort, and functionality. Your dream space starts here.
         </p>
@@ -91,15 +91,15 @@ const AboutUs = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-6">
           <a href="mailto:qatarwintrading@gmail.com" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
-            <FaEnvelope size={24} /> info@alfwztrading.com
+            <FaEnvelope size={24} /> qatarwintrading@gmail.com
           </a>
           <a href="tel:+97455760872" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
             <FaPhone size={24} /> +97455760872
           </a>
-          <a href="https://www.instagram.com/luxefurnish" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
+          <a href="https://www.instagram.com/rokibwin?igsh=anU3ejd4dHFneDhi" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
             <FaInstagram size={24} /> Instagram
           </a>
-          <a href="https://www.facebook.com/share/17x1p2tygr/" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
+          <a href="https://www.facebook.com/profile.php?id=61573137238181&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">
             <FaFacebook size={24} /> Facebook
           </a>
           <a href="https://wa.me/+97455760872" target="_blank" rel="noopener noreferrer" className="text-[#6B4226] hover:text-[#8B5A2B] flex items-center gap-2">

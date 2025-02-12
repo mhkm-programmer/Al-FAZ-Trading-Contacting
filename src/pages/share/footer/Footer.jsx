@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="mt-12 border-t border-gray-700 pt-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-400">
-              &copy; 2025 <a href="/">AL-FWZ Trading and Contracting.</a> All rights reserved.
+              &copy; 2025 <a href="/">AL-FWZ Furniture Trading and Contracting.</a> All rights reserved.
             </p>
             
             <div className="flex space-x-6">
@@ -102,7 +102,7 @@ const Footer = () => {
     <FaPhoneAlt size={24} />
   </a>
   <a
-    href="https://www.facebook.com/share/17x1p2tygr/"
+    href="https://www.facebook.com/profile.php?id=61573137238181&mibextid=ZbWKwL"
     target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-violet-400 transition duration-300"
@@ -110,7 +110,7 @@ const Footer = () => {
     <FaFacebook size={24} />
   </a>
   <a
-    href="https://www.instagram.com"
+    href="https://www.instagram.com/rokibwin?igsh=anU3ejd4dHFneDhi"
     target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-violet-400 transition duration-300"

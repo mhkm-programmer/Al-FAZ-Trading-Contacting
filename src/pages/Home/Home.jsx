@@ -12,8 +12,7 @@ const Home = () => {
     <div>
     <PageTitle title="Al-FWZ Trading & Contracting | Home"/>
       <HeroSlider />
-      
-      <RecentServiceCard />
+            <RecentServiceCard />
       {/* <MyProjects />
       <Blog /> */}
       <WhyChoose/>

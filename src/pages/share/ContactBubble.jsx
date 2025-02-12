@@ -76,7 +76,7 @@ const ContactBubble = () => {
 
         {/* Instagram */}
         <a
-          href="https://instagram.com/yourprofile"
+          href="https://www.instagram.com/rokibwin?igsh=anU3ejd4dHFneDhi"
           target="_blank"
           rel="noopener noreferrer"
           className="p-4 rounded-full text-white bg-pink-500 hover:bg-pink-600 shadow-md transition"
@@ -86,7 +86,7 @@ const ContactBubble = () => {
 
         {/* Facebook */}
         <a
-          href="https://www.facebook.com/share/17x1p2tygr/"
+          href="https://www.facebook.com/profile.php?id=61573137238181&mibextid=ZbWKwL"
           target="_blank"
           rel="noopener noreferrer"
           className="p-4 rounded-full text-white bg-blue-700 hover:bg-blue-800 shadow-md transition"

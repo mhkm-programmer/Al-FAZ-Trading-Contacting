@@ -103,9 +103,9 @@ const HeaderAlFWZ = () => {
         <h1 className="text-sm md:text-lg text-center font-medium text-[#ffcc00]">
           <Typed
             strings={[
-              "Welcome to AL-FWZ Trading and Contracting",
-              "All Kind of Furniture and Upholstery",
-              "Shop or Book an Appointment",
+              "Welcome to AL-FWZ Furniture Trading",
+              "All Kind of Furniture and Upholstery Services",
+              "Shop Now or Book an Appointment",
             ]}
             typeSpeed={60}
             backSpeed={40}

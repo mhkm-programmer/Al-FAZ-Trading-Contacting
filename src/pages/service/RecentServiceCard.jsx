@@ -505,29 +505,38 @@ const shortTextLength = 100; // Adjust the character limit
         
 
           <div className="flex flex-wrap -m-1">
-            <div className="flex flex-wrap w-1/2">
-              {selectedProject.galleryImage.slice(0, 3).map((gallery, index) => (
-                <div key={index} className={`p-1 ${index === 2 ? "w-full" : "w-1/2"}`}>
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full rounded-lg shadow-md"
-                    src={gallery}
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap w-1/2">
-              {selectedProject.galleryImage.slice(3, 6).map((gallery, index) => (
-                <div key={index} className={`p-1 ${index === 0 ? "w-full" : "w-1/2"}`}>
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full rounded-lg shadow-md"
-                    src={gallery}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+  {/* First Column */}
+  <div className="flex flex-wrap w-full md:w-1/2">
+    {selectedProject.galleryImage.slice(0, 3).map((gallery, index) => (
+      <div
+        key={index}
+        className={`p-1 w-full ${index === 2 ? "md:w-full" : "md:w-1/2"}`}
+      >
+        <img
+          alt="gallery"
+          className="w-full object-cover h-48 md:h-full rounded-lg shadow-md"
+          src={gallery}
+        />
+      </div>
+    ))}
+  </div>
+
+  {/* Second Column */}
+  <div className="flex flex-wrap w-full md:w-1/2">
+    {selectedProject.galleryImage.slice(3, 6).map((gallery, index) => (
+      <div
+        key={index}
+        className={`p-1 w-full ${index === 0 ? "md:w-full" : "md:w-1/2"}`}
+      >
+        <img
+          alt="gallery"
+          className="w-full object-cover h-48 md:h-full rounded-lg shadow-md"
+          src={gallery}
+        />
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       )}
 
